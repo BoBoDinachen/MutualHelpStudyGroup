@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* 竹绿 */
+  --bamboo-green: #70C1B3;
+  /*  牡丹红 */
+  --peony-red: #E5989B;
+  /* 暗黑  */
+  --dark-black: #50514F;
+}
+
+input {
+  outline: none;
+}
+
+@font-face {
+  /* font-properties */
+  font-family: "XiaoTu";
+  src: url(../assets/fonts/qiantu.ttf);
+}
+
+@layer base {
+  .theme-dark {
+    @apply bg-dark-black text-white
+  }
+}

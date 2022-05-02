@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cat.mapper.StudentGroupMapper">
+    <resultMap id="groupMemberResultMap" type="StudentGroup">
+        <id column="member_id" property="id"/>
+        <result column="group_id" property="groupId"/>
+        <result column="join_time" property="joinTime"/>
+        <result column="is_leader" property="isLeader"/>
+        <result column="student_id" property="studentId"/>
+        <association property="student" javaType="Student">
+            <id column="s_id" property="id"/>
+            <result column="email" property="email"/>
+            <result column="sex" property="sex"/>
+            <result column="user_name" property="userName"/>
+            <result column="portrait_path" property="portraitPath"/>
+        </association>
+    </resultMap>
+    <select id="getGroupMemberList" resultMap="groupMemberResultMap">
+        select sg.member_id member_id,sg.group_id group_id,sg.join_time join_time,sg.is_leader is_leader,
+               sg.student_id student_id,s.s_id s_id,s.email email,s.sex sex,s.user_name user_name,s.portrait_path portrait_path
+        from student_group sg
+            left join student s on sg.student_id = s.s_id
+        where sg.group_id = #{groupId}
+    </select>
+</mapper>

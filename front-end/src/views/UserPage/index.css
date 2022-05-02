@@ -1,0 +1,20 @@
+/* 个人信息盒子 */
+.profile-box {
+  @apply w-full flex justify-between items-center mt-5 h-20 px-4 py-1 active:bg-slate-200;
+}
+.profile-content-box {
+  @apply flex flex-1 flex-col justify-center pl-3;
+}
+
+/* 查看学习计划 */
+.look-plan-box {
+  @apply w-11/12 rounded-md flex justify-between items-center px-3 py-2 mt-3 shadow-md;
+}
+
+/* 菜单项 */
+.menu-item {
+  @apply flex justify-between items-center px-5 py-4 active:bg-slate-200;
+}
+.menu-item-title {
+  @apply flex-1 ml-3 font-light text-sm;
+}
