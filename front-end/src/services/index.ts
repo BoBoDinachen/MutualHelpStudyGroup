@@ -7,7 +7,7 @@ const toast = useToast();
 if (import.meta.env.DEV) {
   axios.defaults.baseURL = '/api';
 } else if (import.meta.env.PROD) {
-  axios.defaults.baseURL = 'http://192.168.43.203:8080';
+  axios.defaults.baseURL = 'http://localhost:8081';
 }
 
 // 请求超时时间
